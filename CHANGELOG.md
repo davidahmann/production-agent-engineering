@@ -4,6 +4,14 @@ Notable changes to this project are recorded here.
 
 ## [Unreleased]
 
+## [2.4.0] - 2026-09-12
+
+- Add a short first-workflow investigation that uses a small recent-case sample to surface systems, handoffs, workarounds, and unanswered questions without treating it as population-level data-quality evidence.
+- Make internal adoption more practical through a recurring working loop: operators, workflow and service owners, and relevant data or policy owners bring a current case, observed friction, and bounded response to an owned evidence destination.
+- Add a one-page results walkthrough that keeps prior work, changed workflow, measurement period, costs, exceptions, user feedback, uncertainty, and the next accountable decision together without relabeling a demo or forecast as realized value.
+- Add a fictional finance variance-commentary walkthrough that keeps calculations and materiality policy deterministic, makes owner explanations attributable, uses a model only for a reviewable draft, and keeps approval and distribution with finance.
+- Refresh the local Applied AI Field Guide plugin snapshot and teaching-release dependency bindings. No new lifecycle, control family, schema, hosted service, executable lab, or production claim is introduced.
+
 ## [2.3.0] - 2026-09-12
 
 - Keep the dependency-free, deterministic BM25 retrieval lab as the default and add an opt-in hybrid comparison boundary. The optional adapter receives only already-admitted synthetic sources, requires explicit reader-supplied OpenAI-compatible configuration, reports provider usage and declared input cost when available, and remains inconclusive for deployment.
@@ -312,7 +320,8 @@ Notable changes to this project are recorded here.
 - Add a transactional invoice-exception reference with executable policy, runtime, contract, and adversarial replay tests.
 - Add a dated evidence ledger with explicit source-quality and claim boundaries.
 
-[Unreleased]: https://github.com/davidahmann/applied-ai-field-guide/compare/v2.3.0...HEAD
+[Unreleased]: https://github.com/davidahmann/applied-ai-field-guide/compare/v2.4.0...HEAD
+[2.4.0]: https://github.com/davidahmann/applied-ai-field-guide/compare/v2.3.0...v2.4.0
 [2.3.0]: https://github.com/davidahmann/applied-ai-field-guide/compare/v2.2.0...v2.3.0
 [2.2.0]: https://github.com/davidahmann/applied-ai-field-guide/compare/v2.1.0...v2.2.0
 [2.1.0]: https://github.com/davidahmann/applied-ai-field-guide/compare/v2.0.0...v2.1.0

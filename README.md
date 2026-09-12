@@ -17,6 +17,7 @@ An open-source design and verification kit for people choosing, building, evalua
 | You need to… | Start here | Leave with |
 | --- | --- | --- |
 | **Decide where AI could help** | [Discovery and Value](playbooks/01-discovery-and-value.md), then [mechanism selection](library/12-software-architecture-and-intelligence-selection.md) | An observed decision, accepted outcome, verifier, value hypothesis, and simplest plausible mechanism |
+| **Find a first workflow** | [First workflow investigation](playbooks/01-discovery-and-value.md#run-a-first-workflow-investigation) and the [discovery pack](templates/discovery-pack.md) | Recent cases, system path, and unknowns—not a quality claim |
 | **Build a useful first feature** | [Build one vertical slice](playbooks/02-solution-and-delivery.md#5-build-a-vertical-slice) and try the [invoice review lab](examples/invoice-exception/document-review/README.md) | One bounded path through real inputs, a usable review surface, failure behavior, and test cases |
 | **Fix weak retrieval or unsupported answers** | [Context and knowledge systems](library/02-context-and-knowledge-systems.md) and the [retrieval evaluation lab](examples/invoice-exception/retrieval-evaluation/README.md) | Separate evidence for retrieval, source support, permissions, freshness, abstention, latency, and cost |
 | **Make a retry or recovery path safe** | [Enterprise integration reality](library/17-enterprise-integration-and-scale-reality.md) and the [durable recovery lab](examples/invoice-exception/durable-recovery/README.md) | A stable operation identity, explicit ambiguity, source-of-truth readback, and an escalation path instead of a duplicated effect |
@@ -50,6 +51,8 @@ Try the [invoice practice packet](examples/invoice-exception/document-review/pra
 The [invoice-exception engagement](examples/invoice-exception/engagement/README.md) follows a sold promise that field evidence kills: reframe, economics, controlled-write [runtime](examples/invoice-exception/reference-loop.mjs), retrieval comparison, restart-safe recovery practice, evaluation, blocked handoff, and review-only decision.
 
 The [shipment-risk example](examples/shipment-risk-triage/README.md) combines classical ML, deterministic routing, optional model explanation, and human review.
+
+The [finance variance-commentary walkthrough](examples/finance-variance-commentary/README.md) shows a review-first path: code calculates, owners explain, finance approves the model draft.
 
 ```bash
 npm ci --ignore-scripts

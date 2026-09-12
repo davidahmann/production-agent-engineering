@@ -196,3 +196,28 @@ test("field interactions close through an isolated reviewed append loop and a de
   const combined = [playbook, observation, discovery, serviceReview].join("\n");
   assert.doesNotMatch(combined, /~\/.fde|\.fde\/clients|21-day|trust traffic light|@fde\b/i);
 });
+
+test("the guide adds practical investigation, adoption, results, and finance-review routes without new authority", async () => {
+  const [discovery, adoption, results, finance, catalog] = await Promise.all([
+    readFile(path.join(root, "playbooks", "01-discovery-and-value.md"), "utf8"),
+    readFile(path.join(root, "templates", "delivery-and-adoption-plan.md"), "utf8"),
+    readFile(path.join(root, "templates", "results-walkthrough.md"), "utf8"),
+    readFile(path.join(root, "examples", "finance-variance-commentary", "README.md"), "utf8"),
+    json("catalog.json"),
+  ]);
+
+  assert.match(discovery, /## Run a first workflow investigation/);
+  assert.match(discovery, /10–15 recent, eligible cases/);
+  assert.match(discovery, /cannot establish a defect rate, represent the full population, or replace source profiling/i);
+  assert.match(adoption, /## Working adoption loop/);
+  assert.match(adoption, /does not replace support, incident handling, source\/policy decisions, or release authority/i);
+  assert.match(adoption, /demonstration, attendance, or positive feedback as adoption, accepted outcome, or realized value/i);
+  for (const heading of ["## Decision context", "## The work that changed", "## What the period showed", "## What users said", "## Next decision"]) assert.ok(results.includes(heading), heading);
+  assert.match(results, /A forecast is not an observed result/i);
+  assert.match(results, /does not supersede them or authorize a release/i);
+  assert.match(finance, /compact, fictional walkthrough/i);
+  assert.match(finance, /The model never calculates a figure, selects a threshold, invents an explanation, changes a forecast, or sends the report/i);
+  assert.match(finance, /A good draft score cannot compensate for wrong figures or missing approval/i);
+  assert.match(finance, /does not provide accounting, audit, tax, or financial-reporting advice/i);
+  for (const artifactPath of ["templates/results-walkthrough.md", "examples/finance-variance-commentary/README.md"]) assert.ok(catalog.artifacts.some((artifact) => artifact.path === artifactPath), artifactPath);
+});

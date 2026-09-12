@@ -46,6 +46,7 @@ export const navigation = [
       "/applied-ai-capability-roadmap/",
       "/field-engagement-reframing/",
       "/worked-engagement/invoice-exception/",
+      "/worked-walkthrough/finance-variance-commentary/",
       "/practice/invoice-review/",
       "/practice/invoice-policy-retrieval/",
       "/practice/invoice-durable-recovery/",
@@ -152,6 +153,14 @@ export const pages = [
     title: "Worked AI Delivery Engagement: When the Sold Brief Cannot Ship",
     description:
       "Follow one synthetic invoice engagement from field contradiction and reframe through economics, evaluation, adoption, handoff, and a review-only decision.",
+  },
+  {
+    route: "/worked-walkthrough/finance-variance-commentary/",
+    source: "examples/finance-variance-commentary/README.md",
+    navTitle: "Finance review walkthrough",
+    title: "Finance Variance Commentary: Deterministic Numbers, Reviewable AI Drafts",
+    description:
+      "A fictional finance walkthrough that keeps calculations and policy deterministic, makes owner explanations attributable, and leaves approval with finance.",
   },
   {
     route: "/applied-ai-operating-model/",

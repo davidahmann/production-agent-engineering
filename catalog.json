@@ -28,6 +28,12 @@
       "tags": ["durable-execution", "recovery", "idempotency", "readback", "practice"]
     },
     {
+      "id": "example.finance-variance-commentary",
+      "type": "example",
+      "path": "examples/finance-variance-commentary/README.md",
+      "tags": ["finance", "deterministic-calculation", "human-review", "source-authority", "walkthrough"]
+    },
+    {
       "id": "guide.five-minute",
       "type": "standard",
       "path": "guide/field-guide-in-five-minutes.md",
@@ -98,6 +104,12 @@
       "type": "template",
       "path": "templates/value-case.md",
       "tags": ["value", "outcome", "economics", "measurement"]
+    },
+    {
+      "id": "template.results-walkthrough",
+      "type": "template",
+      "path": "templates/results-walkthrough.md",
+      "tags": ["results", "measurement", "adoption", "economics", "decision"]
     },
     {
       "id": "template.ai-value-engineering-scorecard",
