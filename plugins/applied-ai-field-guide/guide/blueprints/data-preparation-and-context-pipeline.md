@@ -17,12 +17,14 @@ Use this blueprint when a consequential workflow depends on operational records,
 9. **Output registrar** assigns ownership, provenance, correction, retention, deletion, and downstream-use policy to generated data.
 10. **Quality and drift monitor** detects source, schema, permission, coverage, transformation, label, and population changes.
 11. **Reconciliation queue** routes unknown, stale, conflicting, corrected, or late data to an accountable owner.
+12. **Derived-state register** keeps each stored field, relationship, score, or summary linked to its raw or authoritative source, producer configuration, time semantics, scope, lifecycle status, and correction path.
 
 ## Trust boundaries
 
 - Source adapters authenticate at the source and never expand caller, tenant, or field scope.
 - Retrieved and user-supplied content remains untrusted data.
 - Derived indexes, features, embeddings, and graphs carry provenance but do not become authorization or source-of-truth policy.
+- A derived business fact is revisable. Preserve its prior revision and status (`current`, `superseded`, `corrected`, `withdrawn`, or `unresolved`) rather than silently overwriting raw evidence or treating extraction output as a valid state transition.
 - A compiled context packet is a runtime projection of the admitted data-context manifest and behavior bundle. It contains only fields permitted for the selected route and cannot grant authority, repair missing evidence, or expose protected evaluation answers.
 - Evaluation answers and hidden fixtures are not accessible to runtime routes.
 - Telemetry and corrections do not become labels or training data without an approved label and use contract.
@@ -40,6 +42,7 @@ Failure states are first-class: `missing`, `stale`, `conflicting`, `permission_d
 - Conflicting sources follow declared precedence and owner adjudication.
 - A corrected source invalidates affected derived context and queues bounded replay.
 - Schema, permission, or preparation-version changes invalidate admission until compatibility and regression checks pass.
+- A source, schema, producer, or model-route change creates a candidate derived view alongside the current view. Publication waits for the declared material-difference review; a migration or extraction job cannot establish source truth or commit business state.
 - Unknown packet lineage, failed privacy validation, expired freshness, revoked field permission, or an incompatible provider route stops before model invocation and follows the declared fallback.
 - Coverage or representativeness failure constrains the eligible segment rather than being hidden in an aggregate.
 - Unknown output ownership blocks durable downstream use.
@@ -57,6 +60,7 @@ Record source and schema revisions, profile snapshot, preparation versions and d
 - Label disagreement and answer-key access fail closed.
 - Transformation and index changes invalidate stale evidence.
 - Source, policy, preparation, enrichment, redaction, or route changes invalidate affected context packets and queue bounded replay.
+- Derived-state revision, correction, withdrawal, unresolved status, and material-difference review are exercised; raw evidence and prior derived revisions remain recoverable.
 - Inspect the final serialized outbound request for primary, retry, fallback, and provider-failover paths; forbidden sensitive fields must remain absent from requests, error payloads, logs, traces, and caches.
 - Output correction, supersession, retention, and deletion are exercised.
 - Production drift triggers constrain, replay, rollback, or rebaseline as declared.

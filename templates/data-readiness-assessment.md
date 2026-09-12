@@ -50,6 +50,16 @@ Check join cardinality, duplicate entities, correction latency, missing-not-at-r
 
 Include parsing, OCR, normalization, deduplication, entity resolution, redaction, chunking, indexing, joins, feature engineering, aggregation, and human adjudication when used. Preserve raw evidence and source references. Derived views may guide retrieval and review; they do not become source-of-truth policy.
 
+## Derived-state lifecycle
+
+For every stored field, relationship, score, or summary derived from operational records, documents, rules, or model output, retain the raw or authoritative source separately and record:
+
+| Derived claim | Source references and revisions | Producer and configuration revision | Asserted / observed / effective time | Scope and freshness | Status and prior revision | Owner and correction path | Purpose, classification, retention, and access boundary |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  | `current | superseded | corrected | withdrawn | unresolved` |  |  |
+
+When a source, schema, preparation step, or model route changes, create a candidate view alongside the current one. Compare material differences before publication, retain the prior revision, and route any acceptance, correction, rejection, or unresolved state to the relevant source or workflow owner. A migration or extraction process may propose a backfill; it does not gain authority to establish source truth or commit business state.
+
 ## Labels and reference authority
 
 - Label or expected-result definition:

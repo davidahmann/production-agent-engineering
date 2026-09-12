@@ -62,6 +62,14 @@ Use explicit thresholds, evidence, and fallbacks. Unknown critical quality means
 
 Parsing, OCR, normalization, deduplication, entity resolution, redaction, chunking, indexing, joins, feature engineering, and aggregation are production components. Version them. Test them. Record input revisions, implementation versions, output digests, validation, reversibility, and lineage. Preserve the raw source and make derived relationships explainable.
 
+### 4a. Treat derived business state as a revisable claim
+
+A CRM field, customer-health score, extracted relationship, or operational summary can be useful without becoming source-of-truth merely because it sits beside the source records. For each stored derived fact, retain its source references and revisions; producer type and version, including extraction rules or model/prompt configuration where applicable; asserted, observed, and effective times; scope and freshness; status; owner; correction path; classification; permitted purpose; retention; and access boundary.
+
+Do not silently overwrite an earlier derived state. When a source, schema, extraction configuration, or model route changes, build a candidate view separately, compare material differences, preserve the earlier revision, and let the relevant source or workflow owner accept, correct, reject, or leave the claim unresolved. A migration assistant may propose a mapping or backfill. It does not gain authority to decide source truth or write business state.
+
+Retrieve context progressively for the decision at hand. A graph can help find likely relevant facts, but it is neither a company-wide context dump nor a causal model. It cannot infer a valid state transition or fill an evidence gap. Keep the unknown, route it to review, or use the declared fallback.
+
 When a model route is selected, compile the permitted facts for one bounded decision in trusted software. Bind the compiled context packet to its workflow and segment, allowed model-visible fields, source and policy revisions, preparation versions, freshness, sensitivity, provenance, digest, and compatible routes. This is a runtime projection of the existing data-context manifest and behavior bundle, not another manifest or source of authority. Missing evidence stays missing; the model does not get a broader search path to compensate.
 
 Test privacy after final prompt assembly and middleware, on the serialized request that would leave the boundary. Exercise primary, retry, fallback, and provider-failover routes plus error payloads, logs, traces, caches, and retained evaluation material. An earlier redaction step does not prove that a later join, prompt builder, or logger did not reintroduce a prohibited field.

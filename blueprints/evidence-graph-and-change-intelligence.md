@@ -33,8 +33,9 @@ flowchart LR
 
 - Treat a map as **derived context**. It must retain source revision, owner, classification, freshness objective, extraction basis, and confidence. `CTX-001`, `CTX-004`.
 - Label every relationship as `extracted` or `inferred`. An inferred edge is a review lead, not proof of a dependency or approval obligation.
+- For a derived business fact, also retain source references and revisions, producer or extraction configuration, asserted, observed, and effective times, scope, lifecycle status, and correction path. Preserve earlier revisions; a graph record does not overwrite raw evidence or establish source truth.
 - Keep source records, authorization policy, effect service, evaluator, and source-of-truth readback authoritative. A map MUST NOT authorize an action, define policy, prove task completion, or replace a release manifest. `ARC-002`, `CTX-002`.
-- Apply the same classification, query logging, retention, access, and egress rules as any other derived context. A graph query result is untrusted data, not instruction authority. `CTX-002`.
+- Apply the same classification, query logging, retention, access, and egress rules as any other derived context. Return task-scoped, progressive projections rather than a company-wide context dump. A graph query result is untrusted data, not instruction authority, causal proof, or state-transition authority. `CTX-002`.
 - Store maps as reviewable artifacts or records. A graph database, generated documentation, repository files, and a catalog service are all viable implementations if provenance and access rules hold.
 
 ## Build and refresh
@@ -43,7 +44,7 @@ flowchart LR
 2. Create a [system-map manifest](../templates/system-map-manifest.json) with scope, producer configuration, classification, source revisions, coverage, nodes, relations, and invalidation triggers.
 3. Prefer deterministic extraction for interface, repository, deployment, and dependency facts. Use semantic extraction only for unstructured material; keep the model, prompt/configuration, and confidence visible.
 4. Reconcile high-consequence inferred links with the named owner or authoritative source before acting on them.
-5. Mark the map stale and rebuild it after an input revision, ownership change, new integration, policy change, incident, or scheduled freshness breach.
+5. Mark the map stale and rebuild it after an input revision, ownership change, new integration, policy change, incident, or scheduled freshness breach. When a source schema or producer changes a derived fact, build a candidate projection alongside the current one, calculate material differences, and route publication, correction, rejection, or unresolved status to the named source or workflow owner.
 
 ## Material change review
 
@@ -61,9 +62,10 @@ Use the map to find what to inspect. Use the compatible release, tests, evaluati
 | Extraction produces an unsupported link | Label it inferred, retain source evidence, and route it to owner review |
 | Map contains restricted data | Enforce classification/retention/query controls; remove or rebuild the affected derived artifact |
 | Map conflicts with source of truth | Preserve the conflict, use the source of truth for operations, and correct the map |
+| Source, schema, or producer change alters a derived fact | Keep the candidate separate, preserve the prior revision, and require the declared owner review before publishing the new status |
 | Map service is unavailable | Continue with the governed source artifacts and existing release process; do not bypass authorization or evaluation |
 
-Release tests should cover source-revision capture, stale-map detection, extraction/inference labeling, path containment, restricted-data handling, material-change coverage, and the guarantee that a map cannot authorize an effect or prove completion.
+Release tests should cover source-revision capture, derived-fact lifecycle and prior-revision retention, candidate-versus-current material differences, stale-map detection, extraction/inference labeling, path containment, restricted-data handling, material-change coverage, and the guarantee that a map cannot authorize an effect, prove completion, or establish a state transition.
 
 ## Evidence
 
