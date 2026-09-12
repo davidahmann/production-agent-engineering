@@ -103,6 +103,17 @@ Keep customer-specific policies and data with their owner. Promote only an abstr
 
 Control: `FDE-002`.
 
+### Run a first workflow investigation
+
+When the work is still vague, do one small investigation before proposing a solution:
+
+1. Pull 10–15 recent, eligible cases with the operational owner. Inspect enough detail to see missing fields, stale records, manual bridges, waits, and exception paths.
+2. Trace each case from trigger to completion: systems touched, decisions made, evidence checked, handoffs, workarounds, and the signal that says the work is done.
+3. Speak to one person upstream who creates or changes an input and one person downstream who uses the result. Ask what arrives late, gets corrected, or forces a workaround.
+4. Put the cases, observations, source owners, and unanswered questions into the [discovery pack](../templates/discovery-pack.md) and [field-observation log](../templates/field-observation-log.md). Decide whether to investigate further, narrow the workflow, or stop.
+
+This is a first look, not a data-quality assessment. Ten cases can expose a useful question; they cannot establish a defect rate, represent the full population, or replace source profiling, reconciliation, or readiness evidence.
+
 ### Check the technical reality directly
 
 Before assigning a readiness score or proposing an architecture, inspect enough of the target environment to test the workflow story. The relevant evidence depends on the boundary, but it commonly includes:

@@ -69,6 +69,8 @@ test("site configuration defines one canonical source per route", () => {
     assert.match(page.route, /^\/(?:.*\/)?$/);
     assert.ok(page.description.length >= 90 && page.description.length <= 165, page.route);
   }
+  const finance = pages.find(({ source }) => source === "examples/finance-variance-commentary/README.md");
+  assert.equal(finance?.route, "/worked-walkthrough/finance-variance-commentary/");
 });
 
 test("the five-minute guide stays concise and routes into canonical depth", async () => {

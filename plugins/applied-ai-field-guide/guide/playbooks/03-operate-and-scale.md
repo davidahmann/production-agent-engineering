@@ -63,6 +63,12 @@ Controls: `FDE-003`, `VAL-001`, `VAL-003`, `ADP-002`, `OPS-001` through `OPS-007
 
 Use the [production service review](../templates/production-service-review.md) for one workflow and the [workflow portfolio review](../templates/workflow-portfolio-review.md) across multiple workflows. Governance is a recurring set of decision rights and feedback loops, not a launch checklist. [R26-45]
 
+### Make the adoption loop concrete
+
+Run a short, recurring working session for an active workflow. Invite the workflow owner, one or two operators or reviewers, the service or delivery owner, and the data or policy owner when the current question needs them. Bring one current case, one observed friction or metric, and one proposed response. Leave with a named owner, a due date, and an evidence destination: a support record, a field observation, a backlog item, a policy decision, or a release/change record.
+
+Use short demonstrations to make the changed work visible, not to declare success. A useful demonstration shows the old path, the new path, one correction or exception, and the evidence still needed for the next decision. Share reusable starting material only after sanitization; it does not transfer local policy or authorize reuse. This working loop supplements the support queue, incident response, change review, and release gates. It must not become an informal path around them.
+
 ### Review the delivery portfolio without hiding weak services
 
 A portfolio review is an investment and capacity view over service-level evidence. It must not turn weak workflows into a healthy average or authorize expansion that failed its own value, safety, release, adoption, or ownership gate.

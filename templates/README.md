@@ -66,6 +66,7 @@ Run it with `--profile starter`. As evidence matures, add fields from the canoni
 | [Workflow charter](workflow-charter.json) | Whether to discover, pilot, defer, do not build, promote, pause, or retire the workflow |
 | [AI Value Engineering Scorecard](ai-value-engineering-scorecard.json) | Whether the four hard gates and twelve factors support a bounded pilot or lifecycle decision |
 | [Value case](value-case.md) | Whether measured outcome improvement justifies full delivery and operating cost |
+| [Results walkthrough](results-walkthrough.md) | How to show the changed work, measured period, costs, exceptions, user feedback, and next decision without overstating a result |
 | [Data-readiness assessment](data-readiness-assessment.md) | Whether the four data planes and decision-critical sources are fit, affordable, and owned for the bounded workflow |
 | [Data-context manifest](data-context-manifest.json) | Which exact sources, quality evidence, preparation, labels, outputs, economics, and monitors are bound to design and release |
 | [Intelligence selection record](intelligence-selection-record.md) | Which rules, optimization, ML, retrieval, foundation-model, agent, and human options were considered for a consequential decision |

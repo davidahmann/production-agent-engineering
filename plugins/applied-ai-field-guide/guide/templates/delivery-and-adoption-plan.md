@@ -156,6 +156,16 @@ Do not expand a cohort when adoption success would exceed review, support, or re
 
 The production surface must expose evidence, state, uncertainty, alternatives, and permitted actions. Users must be able to correct, pause, reject, escalate, and resume work without losing the audit trail.
 
+## Working adoption loop
+
+Use a short, recurring working session while the workflow is changing. This is a way to make adoption work visible. It does not replace support, incident handling, source/policy decisions, or release authority.
+
+| Participants | Bring | Decide or produce | Owner and due date | Evidence destination |
+| --- | --- | --- | --- | --- |
+| Workflow owner; one or two operators/reviewers; service or delivery owner; data or policy owner when needed | One current case; one observed friction, metric, or support theme; one proposed response | Preserve, repair, remove, escalate, or test one bounded response | — | Support record / field observation / backlog item / policy decision / change or release record |
+
+When a short demonstration helps, show the prior path, changed path, one correction or exception, and what still needs evidence. Do not present a demonstration, attendance, or positive feedback as adoption, accepted outcome, or realized value.
+
 ## Stakeholder value and productization boundary
 
 | Audience | Outcome or workday benefit | New responsibility | Acceptance evidence | Customer-specific or reusable | Owner |
