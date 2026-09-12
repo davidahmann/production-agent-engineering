@@ -4,6 +4,12 @@ Notable changes to this project are recorded here.
 
 ## [Unreleased]
 
+## [2.4.1] - 2026-09-12
+
+- Clarify that a stored CRM field, relationship, score, or operational summary derived from records, rules, or model output is a revisable claim, not source truth: retain its evidence, producer configuration, time semantics, lifecycle status, owner, correction path, and prior revision.
+- Add a candidate-versus-current derived-state review to data preparation, evidence-graph refresh, and change management. Preserve raw evidence and unresolved claims; extraction, migration, and graph tooling may propose a backfill but cannot commit business state or infer a valid transition.
+- Make graph retrieval task-scoped and progressive rather than a company-wide context dump, causal model, or authorization surface. Add a reusable data-readiness assessment table, regression coverage, public-page browser verification, and a refreshed local plugin snapshot and teaching-release bindings.
+
 ## [2.4.0] - 2026-09-12
 
 - Add a short first-workflow investigation that uses a small recent-case sample to surface systems, handoffs, workarounds, and unanswered questions without treating it as population-level data-quality evidence.
@@ -320,7 +326,8 @@ Notable changes to this project are recorded here.
 - Add a transactional invoice-exception reference with executable policy, runtime, contract, and adversarial replay tests.
 - Add a dated evidence ledger with explicit source-quality and claim boundaries.
 
-[Unreleased]: https://github.com/davidahmann/applied-ai-field-guide/compare/v2.4.0...HEAD
+[Unreleased]: https://github.com/davidahmann/applied-ai-field-guide/compare/v2.4.1...HEAD
+[2.4.1]: https://github.com/davidahmann/applied-ai-field-guide/compare/v2.4.0...v2.4.1
 [2.4.0]: https://github.com/davidahmann/applied-ai-field-guide/compare/v2.3.0...v2.4.0
 [2.3.0]: https://github.com/davidahmann/applied-ai-field-guide/compare/v2.2.0...v2.3.0
 [2.2.0]: https://github.com/davidahmann/applied-ai-field-guide/compare/v2.1.0...v2.2.0

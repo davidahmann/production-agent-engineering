@@ -10,7 +10,7 @@ Controls: `DEL-001`, `DEL-002`, `EVA-006`, `OPS-007`.
 | --- | --- | --- |
 | Documentation only | Explanation with no contract, code, policy, prompt, fixture, or procedure effect | Link, claim, and navigation validation |
 | Internal refactor | Behavior-preserving code or infrastructure change | Contract and regression suite; shadow if runtime path changes |
-| Data and context | Source semantics, keys, schema, access, quality, preparation, parser/OCR, join, index, feature, enrichment, redaction, compiled context packet, label, population, output, correction | Manifest diff, affected-segment evaluation, lineage verification, canary, replay, rebaseline or rollback |
+| Data and context | Source semantics, keys, schema, access, quality, preparation, parser/OCR, join, index, feature, enrichment, redaction, compiled context packet, derived business state, label, population, output, correction | Manifest diff, candidate-versus-current derived-state review where applicable, affected-segment evaluation, lineage verification, canary, replay, rebaseline or rollback |
 | Behavioral | Model, provider, prompt, tool description, route, context, memory, guardrail, budget | Per-model/route eval, soak or canary, rollback |
 | Capability | New/changed tool, skill, MCP server, browser/code access, egress, credential | Threat update, contract/authorization/security tests, sandbox, scoped canary |
 | Domain/policy | Source, schema, ontology, business or payer rule, policy, approval | Data reconciliation, migration, representative replay, owner approval |
@@ -26,6 +26,7 @@ Record:
 - Before/after digests for the complete effective release graph, including workflow topology, behavior, admitted skills and capabilities, tools and MCP servers, evaluator, runtime, permissions, budgets, environment, data, and policy
 - Dependency and vendor lifecycle dates
 - Data/state migration and backward compatibility
+- For a derived business-state change, source and prior revisions, producer configuration, time semantics, scope, material-difference result, lifecycle status, and named owner disposition; preserve the earlier revision until the new candidate is accepted
 - Threat and failure-mode delta
 - Evaluation claim, environment, trials, uncertainty, and limitations
 - Operator, service, security, and risk acceptance where applicable

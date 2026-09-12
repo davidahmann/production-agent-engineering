@@ -143,3 +143,25 @@ test("compiled context guidance is source-bounded, privacy-tested, and change-aw
   ));
   assert.equal(artifact?.id, "evidence.healthcare-claims-context-evaluation");
 });
+
+test("derived business state stays source-bound, revisable, and decision-scoped", async () => {
+  const [library, assessment, pipeline, graph, changes] = await Promise.all([
+    readText("library/16-data-readiness-and-context-contracts.md"),
+    readText("templates/data-readiness-assessment.md"),
+    readText("blueprints/data-preparation-and-context-pipeline.md"),
+    readText("blueprints/evidence-graph-and-change-intelligence.md"),
+    readText("operations/change-management.md"),
+  ]);
+
+  assert.match(library, /Treat derived business state as a revisable claim/);
+  assert.match(library, /candidate view separately/i);
+  assert.match(library, /neither a company-wide context dump nor a causal model/i);
+  assert.match(assessment, /Derived-state lifecycle/);
+  assert.match(assessment, /current \| superseded \| corrected \| withdrawn \| unresolved/);
+  assert.match(pipeline, /Derived-state register/);
+  assert.match(pipeline, /candidate derived view alongside the current view/i);
+  assert.match(graph, /task-scoped, progressive projections/i);
+  assert.match(graph, /candidate projection alongside the current one/i);
+  assert.match(graph, /does not overwrite raw evidence or establish source truth/i);
+  assert.match(changes, /candidate-versus-current derived-state review/i);
+});

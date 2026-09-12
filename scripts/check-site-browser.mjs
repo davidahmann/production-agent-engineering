@@ -49,6 +49,11 @@ try {
     await page.getByRole("heading", { name: "Finance Variance Commentary: a Review-First Applied AI Walkthrough", exact: true }).waitFor();
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `finance walkthrough overflow at ${width}`);
     if (screenshotDirectory) await page.screenshot({ path: path.join(screenshotDirectory, `finance-variance-${width}.png`), fullPage: true });
+    await page.goto(`${origin}${base}/ai-data-readiness/`);
+    await page.getByRole("heading", { name: "AI Data Readiness: Context, Quality, Lineage, and Drift", exact: true }).waitFor();
+    await page.getByRole("heading", { name: "Treat derived business state as a revisable claim", exact: true }).waitFor();
+    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `data readiness overflow at ${width}`);
+    if (screenshotDirectory) await page.screenshot({ path: path.join(screenshotDirectory, `data-readiness-${width}.png`), fullPage: true });
     await page.goto(`${origin}${base}/labs/invoice-review/`);
     await page.locator("#invoice").waitFor();
     await page.locator("#reviewer").fill("Fictional reviewer"); await page.locator("#rationale").fill("Checked the final invoice against the source.");
@@ -79,5 +84,5 @@ try {
   await page.goto(`${origin}${base}/`); await page.getByRole("button", { name: /search/i }).first().click();
   await page.getByText(/Search is unavailable/).waitFor(); await page.getByRole("button", { name: "Close", exact: true }).click();
   assert.equal(await page.locator("#site-search").isVisible(), false);
-  console.log("Browser checks passed: desktop/mobile navigation, retrieval, durable-recovery and finance walkthrough routes, search/Escape/error recovery, review/pause/reject/escalate, import rejection, export, persistence and overflow.");
+  console.log("Browser checks passed: desktop/mobile navigation, data-readiness, retrieval, durable-recovery and finance walkthrough routes, search/Escape/error recovery, review/pause/reject/escalate, import rejection, export, persistence and overflow.");
 } finally { await browser.close(); await new Promise((resolve) => server.close(resolve)); }
